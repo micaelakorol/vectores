@@ -1,7 +1,12 @@
-/*Modificar la solución del punto anterior considerando que el programa lea y almacene la información de a
- lo sumo 400 alumnos. La lectura finaliza cuando se ingresa el DNI-1 (que no debe procesarse).*/
+/* 
+Realizar un programa que lea y almacene la información de 400 alumnos ingresantes a la Facultad de
+Informática de la UNLP en el año 2020. De cada alumno se lee: nro de inscripción, DNI, apellido, nombre y
+año de nacimiento. 
+Una vez leída y almacenada toda la información, calcular e informar:
+a) El porcentaje de alumnos con DNI compuesto sólo por dígitos pares.
+ */
 
-  program vector_de_registros_dimL;
+ program vector_de_registros;
 
  type 
 
@@ -12,9 +17,7 @@
  nombre:string;
  anio:integer;
 
- dimF = 400;
-
- vector = array[1..dimF] of alumno;
+ vector = array[1..400] of alumno;
 
  procedure leerAlumnos(a:alumno)
  begin 
@@ -26,28 +29,25 @@
  end;
 
 // Añade los alumnos al vector de registros.
- procedure agregarAlumnos(var v:vector; var dimL:integer)
+ procedure agregarAlumnos(var v:vector)
  var 
   a:alumno;
   i:integer;
   begin
-   dimL:=0;
-   leerAlumnos(a);
-   while(dimL < dimF) and (a.dni <> -1) do
-   begin
-    dimL := dimL + 1; // aumento la dimL 
-    v[dimL] := a; // en la pos. de la dimL agrego al alumno
+   for i := 1 to 400 do 
+   begin 
     leerAlumnos(a);
+    v[i] := a;
    end;
   end
 
-  function calcularPorcentaje(v:vector,dimL:integer):real
+  function calcularPorcentaje(v:vector):real
   var 
    i,dniPar:integer;
    porcentaje:real;
   begin 
    dniPar := 0;
-   for i := 1 to dimL do 
+   for i := 1 to 400 do 
    begin
    if(descomponerDNI(v[i].dni)) then // si la funcion retorna true; hay un dni par.
    begin
@@ -82,9 +82,8 @@
   end
 
 var 
-dimL:integer;
 v:vector;
 begin 
-agregarAlumnos(v,dimL);
-calcularPorcentaje(v,dimL); // inciso a
+agregarAlumnos(v);
+calcularPorcentaje(v); // inciso a
 end

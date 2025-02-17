@@ -1,4 +1,4 @@
-// Suma y promedio de todos los valores de un vector.
+// Sumar y calcular el promedio de todos los valores de un vector.
 program ejercicioVector;
 
 type 

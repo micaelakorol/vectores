@@ -1,4 +1,4 @@
-//hallar el elementoMaximo y elementoMinimo de un vector de 100 números enteros.
+// Hallar el elementoMaximo y elementoMinimo de un vector de 100 números enteros.
 
 program vectorMinYMax;
 

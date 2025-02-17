@@ -1,16 +1,26 @@
-// Realizar un programa que lea números enteros desde teclado hasta que se ingrese el valor-1 (que no
- //debe procesarse) e informe:
- //Por ejemplo, si la secuencia que se lee es: 63 34 99 94 96-1, el programa deberá informar:
- //Número 3: 2 veces
- //Número 4: 2 veces
- //El dígito más leído fue el 9.
+/*
+Escriba un programa que lea números enteros desde el teclado hasta que se ingrese el valor -1. 
+Este valor indica el fin de la entrada y no debe procesarse.
+El programa debe contar la cantidad de veces que aparece cada dígito (del 0 al 9) en todos los números 
+ingresados.
+Finalmente, deberá indicar cuál fue el dígito más frecuente.
+
+Ejemplo de entrada: 63 34 99 94 96 -1
+
+Salida esperada:
+Dígito 3: 2 veces  
+Dígito 4: 2 veces  
+Dígito 9: 3 veces  
+Dígito 6: 2 veces  
+El dígito más frecuente fue el 9.  
+*/
 
  program ejercicioVContador;
 
  type 
  vector = array [0..9] of integer;
 
- // Inicializamos las posiciones en 0 del vContador:
+ // inicializar las posiciones en 0 del vContador:
  program inicializar(var vContador:vector)
  var 
   i:integer;
