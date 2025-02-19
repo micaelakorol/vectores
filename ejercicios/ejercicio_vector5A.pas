@@ -32,7 +32,7 @@ La información se ingresa *ordenada por marca*. Se pide calcular e informar:
   leerAuto(a);
   while(a.marca <> 'ZZZ') do 
   begin
-   actual := a.marca;
+   actual := a.marca; // Almacena la marca actual
    cant := 0; // Contador de autos por marca.
    precioP := 0; // Accumulador de precios por marca.
    while(a.marca <> 'ZZZ') and (a.marca = actual)do 
@@ -48,8 +48,6 @@ La información se ingresa *ordenada por marca*. Se pide calcular e informar:
   end;
  end
 
- var
- a:auto;
  begin 
- procesarAutos(a);
+ procesarAutos();
  end.
